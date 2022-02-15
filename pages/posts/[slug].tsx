@@ -27,6 +27,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     "fields.slug": params.slug,
   });
 
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       post: items[0],
