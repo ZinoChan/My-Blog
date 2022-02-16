@@ -5,6 +5,7 @@ import "@fontsource/archivo-narrow";
 import "@fontsource/archivo-narrow/700.css";
 import "@fontsource/source-sans-pro";
 import "@fontsource/source-sans-pro/700.css";
+import "@fontsource/source-sans-pro/600.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
