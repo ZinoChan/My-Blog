@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import BlogCard from "../components/BlogCard";
+import Hero from "../components/Hero";
 
 export const getStaticProps: GetStaticProps = async () => {
   const client = createClient({
@@ -21,12 +22,13 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Home({ posts }) {
   console.log(posts);
   return (
-    <div className="max-w-screen-xl mx-auto p-4">
-      <div className="grid grid-cols-5 gap-4">
+    <div>
+      {/* <div className="grid grid-cols-5 gap-4">
         {posts.map((post) => (
           <BlogCard key={post.sys.id} post={post} />
         ))}
-      </div>
+      </div> */}
+      <Hero />
     </div>
   );
 }
