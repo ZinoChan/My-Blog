@@ -28,7 +28,7 @@ export default function Home({ posts }) {
           <BlogCard key={post.sys.id} post={post} />
         ))}
       </div> */}
-      <Hero />
+      <Hero posts={posts} />
     </div>
   );
 }
