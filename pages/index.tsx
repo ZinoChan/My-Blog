@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
+import AllPosts from "../components/AllPosts";
 
 import Hero from "../components/Hero";
 import TopPost from "../components/TopPost";
@@ -25,6 +26,7 @@ export default function Home({ posts }) {
     <div>
       <Hero posts={posts} />
       <TopPost posts={posts} />
+      <AllPosts posts={posts} />
     </div>
   );
 }
