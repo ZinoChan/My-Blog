@@ -2,6 +2,7 @@ import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import BlogCard from "../components/BlogCard";
 import Hero from "../components/Hero";
+import TopPost from "../components/TopPost";
 
 export const getStaticProps: GetStaticProps = async () => {
   const client = createClient({
@@ -29,6 +30,7 @@ export default function Home({ posts }) {
         ))}
       </div> */}
       <Hero posts={posts} />
+      <TopPost posts={posts} />
     </div>
   );
 }
