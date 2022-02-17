@@ -16,7 +16,7 @@ const PostCard = ({ post }) => {
       <h3 className="font-secondary text-xl mb-2 font-bold">
         {post.fields.title}
       </h3>
-      <p className="font-secondary text-gray-400">
+      <p className="text-ellipsis h-20 overflow-hidden font-secondary text-gray-400">
         {post.fields.postDetails.content[0].content[0].value}
       </p>
     </div>
