@@ -2,6 +2,7 @@ import { createClient } from "contentful";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Link from "next/link";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -49,25 +50,44 @@ const PostDetail = ({ post }) => {
   const { title, featuredImage, topics, readingTime, postDetails } =
     post.fields;
   return (
-    <div className="max-w-screen-md text-center mx-auto py-6">
-      <Image
-        src={`https:${featuredImage.fields.file.url}`}
-        alt={title}
-        width={500}
-        height={200}
-      />
-      <h2 className="my-4 font-bold capitalize text-4xl">{title}</h2>
-      <div className="flex space-x-3">
-        {topics.map((topic, index) => (
-          <span key={`${topic}-${index}`} className="p-2 bg-gray-200 rounded">
-            {topic}
-          </span>
-        ))}
+    <div className="max-w-screen-md mx-auto py-6">
+      <h2 className="font-bold capitalize text-center  text-4xl mb-6">
+        {title}
+      </h2>
+      <div className="text-center">
+        <Image
+          src={`https:${featuredImage.fields.file.url}`}
+          alt={title}
+          width={600}
+          height={400}
+        />
       </div>
-      <p className="my-2 text-left">{readingTime} min read</p>
-      <div className="mt-6 text-left">
+
+      <div className="flex justify-between my-6">
+        <div className="flex space-x-3">
+          {topics.map((topic, index) => (
+            <span
+              key={`${topic}-${index}`}
+              className="p-1 bg-primary-400 text-white rounded text-sm font-secondary font-bold"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
+        <p className="font-secondary text-sm font-bold">
+          {readingTime} min read
+        </p>
+      </div>
+
+      <div className="mt-6 mb-10 text-left">
         {documentToReactComponents(postDetails)}
       </div>
+
+      <Link href="/">
+        <a className="rounded bg-primary-100 text-white text-sm font-secondary capitalize font-bold py-2 px-6">
+          back to home
+        </a>
+      </Link>
     </div>
   );
 };
