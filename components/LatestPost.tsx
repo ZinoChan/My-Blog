@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const LatestPost = ({ posts }) => {
   return (
     <div className="max-w-sm">
@@ -13,7 +15,11 @@ const LatestPost = ({ posts }) => {
             <span className="text-gray-500 text-xs">
               {post.fields.readingTime} min read
             </span>
-            <span className="text-primary-300 font-bold²">read more</span>
+            <Link href={`/posts/${post.fields.slug}`}>
+              <a className="text-primary-300 font-bold capitalize text-sm">
+                read more
+              </a>
+            </Link>
           </p>
         </div>
       ))}

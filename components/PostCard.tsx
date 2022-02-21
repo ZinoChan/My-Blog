@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const PostCard = ({ post }) => {
   return (
@@ -19,6 +20,13 @@ const PostCard = ({ post }) => {
       <p className="text-ellipsis h-20 overflow-hidden font-secondary text-gray-400">
         {post.fields.postDetails.content[0].content[0].value}
       </p>
+      <div className=" mt-2">
+        <Link href={`/posts/${post.fields.slug}`}>
+          <a className="text-secondary-100 font-secondary capitalize text-sm font-bold">
+            read more
+          </a>
+        </Link>
+      </div>
     </div>
   );
 };

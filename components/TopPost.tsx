@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import PostCard from "./PostCard";
 
 const TopPost = ({ posts }) => {
@@ -23,9 +23,11 @@ const TopPost = ({ posts }) => {
                   <p className="font-secondary text-sm text-gray-500">
                     {post.fields.readingTime} min read
                   </p>
-                  <p className="font-secondary font-semibold capitalize text-sm text-secondary-200">
-                    read more
-                  </p>
+                  <Link href={`/posts/${post.fields.slug}`}>
+                    <a className="font-secondary font-bold capitalize text-sm text-secondary-200">
+                      read more
+                    </a>
+                  </Link>
                 </div>
               </div>
             ))}
