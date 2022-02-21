@@ -3,14 +3,14 @@ import Link from "next/link";
 
 const Trending = ({ posts }) => {
   return (
-    <div className="w-full max-w-screen-lg bg-secondary-400 p-2 absolute bottom-0">
-      <div className="max-w-screen-lg  flex">
-        <div className="ml-auto relative">
-          <h4 className="font-secondary text-2xl transform -left-20 -rotate-90 origin-center absolute top-1/2 -translate-y-1/2  text-primary-100 font-bold capitalize">
+    <div className="w-full max-w-screen-lg bg-secondary-400 p-2 md:absolute bottom-0">
+      <div className="max-w-screen-lg  md:flex">
+        <div className="ml-auto relative md:mb-0 mb-2">
+          <h4 className="font-secondary text-2xl md:transform md:-left-20 md:-rotate-90 md:origin-center md:absolute md:top-1/2 md:-translate-y-1/2  text-primary-100 font-bold capitalize">
             trending
           </h4>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center flex-wrap md:space-y-0 space-y-6 md:space-x-4">
           {posts.map((post) => (
             <Link
               passHref
