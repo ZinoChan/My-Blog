@@ -4,9 +4,9 @@ import PostCard from "./PostCard";
 const TopPost = ({ posts }) => {
   return (
     <section className="py-28">
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-lg mx-auto px-2">
         <h2 className="font-primary font-bold text-3xl mb-8">Top Articles</h2>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <PostCard post={posts[0]} />
           <div>
             {posts.slice(1, 5).map((post) => (
