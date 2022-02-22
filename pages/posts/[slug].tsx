@@ -50,7 +50,7 @@ const PostDetail = ({ post }) => {
   const { title, featuredImage, topics, readingTime, postDetails } =
     post.fields;
   return (
-    <div className="max-w-screen-md mx-auto py-6">
+    <div className="max-w-screen-md mx-auto px-2 py-6">
       <h2 className="font-bold capitalize text-center  text-4xl mb-6">
         {title}
       </h2>

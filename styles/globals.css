@@ -6,6 +6,6 @@
   .heading-span::before {
     content: "";
     z-index: -1;
-    @apply w-full bg-primary-100 h-20  -left-1 absolute bottom-6;
+    @apply w-full bg-primary-100 h-20  md:-left-1 absolute md:bottom-6 left-0 bottom-0;
   }
 }
