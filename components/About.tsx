@@ -8,7 +8,7 @@ const About = ({ author }) => {
         <h2 className="font-primary font-bold capitalize text-3xl mb-16">
           About the author
         </h2>
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12">
           <div className="relative max-w-fit">
             <div className="absolute top-4 -right-12 transform -rotate-6 z-20 bg-secondary-100 rounded px-6 py-2">
               <p className="font-secondary font-bold text-white">
