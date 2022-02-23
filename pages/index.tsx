@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
+import About from "../components/About";
 import AllPosts from "../components/AllPosts";
 
 import Hero from "../components/Hero";
@@ -11,22 +12,25 @@ export const getStaticProps: GetStaticProps = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
 
-  const res = await client.getEntries({ content_type: "post" });
+  const post = await client.getEntries({ content_type: "post" });
+  const author = await client.getEntries({ content_type: "author" });
 
   return {
     props: {
-      posts: res.items,
+      posts: post.items,
+      author: author.items,
     },
     revalidate: 10,
   };
 };
 
-export default function Home({ posts }) {
+export default function Home({ posts, author }) {
   return (
     <div>
       <Hero posts={posts} />
       <TopPost posts={posts} />
       <AllPosts posts={posts} />
+      <About author={author[0]} />
     </div>
   );
 }
